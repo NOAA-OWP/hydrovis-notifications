@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome to HydroVIS Notifications</h1>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <h2>Next Authorized Service Interuption (ASI) Maintenance Window</h2>
+        <span class="breaking-change"><b>*Denotes a potential breaking change</b></span>
+        <span class="requires-downtime"><b>**Requires system downtime</b></span>
+      </div>
+      <div class="section-body">
+        <h3 class="section-body-title">October 18, 2022 (4PM to 6PM Central Time)</h3>
+        <h4 class="section-body-subtitle">New Services</h4>
+        <span>NWM Waterbodies (Internal)</span>
+        <span>Flow-Based CatFIM (Internal)</span>
+        <span>NWM AEP FIM (Internal)</span>
+        <span>FIM Performance (Internal)</span>
+        <h4 class="section-body-subtitle">Service Updates</h4>
+        <span class="breaking-change">*All FIM services: FIM extent and metadata 
+          are now a single polygon layer</span>
+        <span class="breaking-change">*MRF Max Inundation - combined 3, 5, and 10 
+          day mrf inundation extents into single service</span>
+        <span class="breaking-change">*AnA 14 Day Inundation - added 7 day layer 
+          to match the 7 day configuration in ana_past_14day_high_flow_magnitude
+        </span>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <h2>Previous ASI Maintenance Windows</h2>
+      </div>
+      <div class="section-body">
+        <h3 class="section-body-title">September 6, 2022</h3>
+        <h4 class="section-body-subtitle">Maintenance</h4>
+        <span class="requires-downtime">**Enterprise GIS Server Updates</span>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <div class="footer-section">
+        <h3>Want to report an issue or provide feedback?</h3>
+        <span>Please use the following to provide NOAA Internal or public information.</span>
+        <div class="feedback-buttons">
+          <div class="button"><a href="https://vlab.noaa.gov/redmine/projects/owp-prod-viz/issues/new" target="_blank">NOAA Internal</a></div>
+          <div class="button"><a href="https://github.com/NOAA-OWP/hydrovis-notifications/issues" target="_blank">Public</a></div>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Useful Links</h3>
+        <div class="footer-links">
+          <a href="https://www.weather.gov/media/owp/operations/Public_Handbook_NWC_Visualization_Services.pdf" target="_blank">HydroVIS Service Handbook</a>
+          <a href="https://maps.water.noaa.gov/server/rest/" target="_blank">HydroVIS Vector Services</a>
+          <a href="https://www.weather.gov/owp/operations" target="_blank">OWP Experimental Product Overview</a>
+          <a href="https://www.surveymonkey.com/r/Exp_NWCVisSvcs_2022" target="_blank">HydroVIS Service Survey Monkey</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+html, body {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+
+  background: #333;
+
+  font-family: "Nunito Sans","Open Sans","Helvetica Neue",sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  height: 5rem;
+
+  color:white;
+  background: #333;
+
+  padding: 0rem;
+}
+
+.logo {
+  display: inline; 
+  width: 20%;
+  vertical-align: middle;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  
+  color: black;
+  background: white;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: #056FB7;
+
+  padding: 1rem;
+}
+
+.section-body {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 1rem;
+}
+
+.section-body:nth-child(even) {
+  background: white;
+}
+
+.section-body:nth-child(odd) {
+  background: #cde4f3;
+}
+
+.section-body-title {
+  color: #003087;
+
+  margin: 0 0 0.25rem 0;
+}
+
+.section-body-subtitle {
+  margin: 1rem 0 0.25rem 0;
+}
+
+.breaking-change {
+  color: #ff5e00;
+}
+
+.requires-downtime {
+  color: red;
+}
+
+.spacer {
+  height: 10rem;
+
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background: #333;
+  color: white;
+
+  padding-bottom: 1rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 1rem 0 1rem;
+}
+
+.feedback-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  display: flex;
+
+  width: 8rem;
+  height: 2rem;
+
+  background: #056FB7;
+  border: 1px solid #003087;
+  border-radius: 10px;
+
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  transition: all 0.2s linear;
+}
+
+.button > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s linear;
+}
+
+.button:hover {
+  background: white;
+}
+
+.button > a:hover {
+  color: black;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links > a {
+  color: white;
+  text-decoration: none;
+
+  margin-top: 0.2rem;
+
+  transition: all 0.2s linear;
+}
+
+.footer-links > a:hover {
+  color: black;
+}
