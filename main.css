@@ -117,8 +117,6 @@ html, body {
 
 .button {
   display: flex;
-
-  width: 8rem;
   height: 2rem;
 
   background: #056FB7;
@@ -128,6 +126,9 @@ html, body {
   margin-top: 1rem;
   margin-right: 1rem;
 
+  padding-left: 1rem;
+  padding-right: 1rem;
+
   transition: all 0.2s linear;
 }
 
@@ -136,7 +137,6 @@ html, body {
   align-items: center;
   justify-content: center;
 
-  width: 100%;
   height: 100%;
   color: white;
   text-decoration: none;
@@ -150,7 +150,7 @@ html, body {
   background: white;
 }
 
-.button > a:hover {
+.button:hover > a {
   color: black;
 }
 
