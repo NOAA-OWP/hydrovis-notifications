@@ -129,6 +129,8 @@ html, body {
   padding-left: 1rem;
   padding-right: 1rem;
 
+  cursor: pointer;
+
   transition: all 0.2s linear;
 }
 
