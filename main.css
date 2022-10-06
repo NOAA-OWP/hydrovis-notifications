@@ -14,18 +14,14 @@ html, body {
   display: flex;
   justify-content: center;
 
-  height: 5rem;
-
   color:white;
   background: #333;
 
   padding: 0rem;
 }
 
-.logo {
-  display: inline; 
-  width: 20%;
-  vertical-align: middle;
+.header > h1 {
+  text-align: center;
 }
 
 .section {
@@ -78,29 +74,27 @@ html, body {
   color: red;
 }
 
-.spacer {
-  height: 10rem;
-
-  margin: 0;
-  padding: 0;
-}
-
 .footer {
-  display: flex;
-  width: 100%;
-
-  position: fixed;
-  left: 0;
-  bottom: 0;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  position: sticky;
+  left: 0;
+  bottom: 0;
 
   background: #333;
   color: white;
 
   padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    position: inherit;
+  }
 }
 
 .footer-section {
