@@ -1,6 +1,15 @@
 # HydroVIS Update Notifications
 
+## Get Notified for Future Updates
+
+To get notifications for future Hydrovis Updates:
+1. Click the "Watch" Button at the top-right of the page.
+2. Select "Custom".
+3. Select "Releases".
+4. Click "Apply" to save your changes.
+
 ## About
+
 This repo is responsible for describing planned updates to the HydroVIS services, listing previous updates, and providing links to documentation and avenues to submit bugs and feedback.
 
 To view the website associated with this repo, click [here](https://noaa-owp.github.io/hydrovis-notifications/).

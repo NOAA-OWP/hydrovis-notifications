@@ -104,7 +104,7 @@ html, body {
   margin: 0 1rem 0 1rem;
 }
 
-.feedback-buttons {
+.button-group {
   display: flex;
   flex-direction: row;
 }
