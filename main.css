@@ -67,7 +67,10 @@ html, body {
 }
 
 .section-line-item {
-  margin-bottom: .5rem;
+  max-width: 50rem;
+  
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .breaking-change {
