@@ -66,6 +66,10 @@ html, body {
   margin: 1rem 0 0.25rem 0;
 }
 
+.section-line-item {
+  margin-bottom: .5rem;
+}
+
 .breaking-change {
   color: #ff5e00;
 }
