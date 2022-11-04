@@ -24,13 +24,28 @@
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
       <div class="section-body">
-        <h3 class="section-body-title">October 18, 2022 (4PM to 6PM Central Time)</h3>
+        <h3 class="section-body-title">November 10, 2022 (4PM to 6PM Central Time)</h3>
+        <h4 class="section-body-subtitle">Service Updates</h4>
+        <span class="section-line-item breaking-change"><b>All Inundation Services (NOAA Internal):</b> All inundation serves are being converted from a raster/vector 
+          hybrid map to purely vector. These services will now have polygon layers with the associated metadata attached.</span>
+        <span class="section-line-item breaking-change"><b>MRF Max Inundation (NOAA Internal):</b> Previously the inundation services for the NWM MRF configuration 
+          were split up into 3, 5, and 10 day services. To align better with the MRF high flow magnitude service, we have 
+          combined the separate MRF inundation services into a single service.</span>
+        <span class="section-line-item breaking-change" ><b>AnA Past 14 Day Max Inundation (NOAA Internal):</b> To align better with the past 14 day max high flow 
+          magnitude service, we are also now providing a max 7 day layer within the service.</span>
         <h4 class="section-body-subtitle">New Services</h4>
-        <span>NWM Waterbodies (NOAA Internal)</span>
-        <span>Flow-Based CatFIM (NOAA Internal)</span>
-        <span>Stage-Based CatFIM (NOAA Internal)</span>
-        <span>NWM AEP FIM (NOAA Internal)</span>
-        <span>FIM Performance (NOAA Internal)</span>
+        <span class="section-line-item"><b>SRF Peak Flow Arrival Time (NOAA Internal):</b> Depicts expected peak flow arrival times derived from the operational National Water 
+          Model short-range forecast. This service is available for CONUS, Hawaii, and Puerto Rico/U.S. Virgin Islands.</span>
+        <span class="section-line-item"><b>MRF Peak Flow Arrival Time (NOAA Internal):</b> Depicts expected peak flow arrival times derived from the operational National
+           Water Model medium-range forecast. This service is available for CONUS.</span>
+        <span class="section-line-item"><b>SRF Rate of Change (NOAA Internal):</b> Depicts expected change in discharge derived from the operational National Water Model 
+          short-range forecast. This service is available for CONUS.</span>
+        <span class="section-line-item"><b>Past 72 Hour Accumulated Precipitation (NOAA Internal):</b> Depicts accumulated precipitation totals over the past 72 hours derived 
+          from the MRMS forcing for the operational National Water Model analysis and assimilation. This service is available for CONUS, Hawaii, and Puerto Rico/U.S. Virgin Islands.</span>
+        <span class="section-line-item"><b>SRF Accumulated Precipitation (NOAA Internal):</b> Depicts expected accumulated precipitation totals over the next 18 hours derived 
+          from the HRRR forcing for the operational National Water Model short-range forecast. This service is available for CONUS, Hawaii, and Puerto Rico/U.S. Virgin Islands.</span>
+        <span class="section-line-item"><b>MRF Accumulated Precipitation (NOAA Internal):</b> Depicts expected accumulated precipitation totals over the next 10 days derived from 
+          the GFS forcing for the operational National Water Model medium-range forecast. This service is available for CONUS.</span>
       </div>
       <div class="section-body">
         <span><b>To try out these updates ahead of time, please use our test services.</b></span>
@@ -40,6 +55,15 @@
     <div class="section">
       <div class="section-header">
         <h2>Previous ASI Maintenance Windows</h2>
+      </div>
+      <div class="section-body">
+        <h3 class="section-body-title">October 18, 2022</h3>
+        <h4 class="section-body-subtitle">New Services</h4>
+        <span>NWM Waterbodies (NOAA Internal)</span>
+        <span>Flow-Based CatFIM (NOAA Internal)</span>
+        <span>Stage-Based CatFIM (NOAA Internal)</span>
+        <span>NWM AEP FIM (NOAA Internal)</span>
+        <span>FIM Performance (NOAA Internal)</span>
       </div>
       <div class="section-body">
         <h3 class="section-body-title">September 6, 2022</h3>
