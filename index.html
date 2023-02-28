@@ -24,22 +24,16 @@
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
       <div class="section-body">
-        <h3 class="section-body-title">January 19, 2023 (9:30AM to 11:30AM Central Time)</h3>
-        <h4 class="section-body-subtitle">New Services</h4>
-        <span class="section-line-item"><b>AnA Streamflow Analysis - Hawaii (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for the state of Hawaii. Updated hourly.</span>
-        <span class="section-line-item"><b>AnA Streamflow Analysis - Puerto Rico/U.S. Virgin Islands (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for Puerto Rico and the U.S. Virgin Islands. Updated hourly.</span>
-        <h4 class="section-body-subtitle">Service Updates</h4>
-        <span class="section-line-item"><b>All AnA (Analysis) Services:</b> Added Reference Time and Valid Time attributes to all AnA services.</span>
-        <span class="section-line-item"><b>Peak Flow Arrival Time Services:</b> Added units (" (hours)") to the Peak Flow Arrival Time and Below Bank Return Time fields. Fixed Line Thickness Issues. Removed the extra "feature_id" variable showing up in the HI and PR/VI Peak Flow services</span>
-        <span class="section-line-item"><b>Medium Range Rapid Onset Flooding:</b> Added "or Beyond Forecast" wording for duration layer.</span>
-        <span class="section-line-item"><b>Short Range High Water Arrival Time - Hawaii:</b> Removed the "or Beyond Forecast" for the arrival time layer.</span>
-        <span class="section-line-item"><b>Short Range Rate of Change:</b> Add % to categories in legend. Fixed field aliases to match layer, i.e. 3-Hour flow for 3 Hour layer, 6-Hour flow for 6 Hour layer, etc. </span>
+        <h3 class="section-body-title">March 2, 2023 (9:30AM to 11:30AM Central Time)</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
-        <span class="section-line-item"><b>Service Descriptions:</b> Updated descriptions to include the update frequency.</span>
-        <span class="section-line-item"><b>Map Names:</b> Updated map names to have better consistency across services. Pattern is "{Model} {Time Period if applicable} {Service} {- Domain (if not for CONUS)}. For example "NWM Past 72 Hours Accumulated Precipitation Analysis - Hawaii" or "NWM Short-Range Accumulated Precipitation Forecast".</span>
-        <span class="section-line-item"><b>Layer Names:</b> Updated layer names to have better consistency across services. Pattern is "{Time Period if applicable -} {Service}". For example, "Past 1 Hour - Accumulated Precipitation" or "3 Days - Peak Flow Arrival Time"</span>
-        <span class="section-line-item breaking-change"><b>Feature ID Field:</b> The field alias has not changed but the field name has been changed from "feature_id_str" to "feature_id". The field type will continue to be string</span>
-        <span class="section-line-item breaking-change"><b>Hydro ID Field:</b> The field alias has not changed but the field name has been changed from "hydro_id_str" to "hydro_id". The field type will continue to be string</span>
+        <span class="section-line-item"><b>FIM4 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated to use FIM version 4 datasets instead of the prior version 3 datasets. This is a significant update to our services.</span>
+        <h4 class="section-body-subtitle">New Services</h4>
+        <span class="section-line-item"><b>SRC Skill (NOAA Internal):</b> Depicts a statistical analysis of water surface elevation (ft) between the synthetic HAND rating curves and USGS rating curves.</span>
+        <h4 class="section-body-subtitle">Service Updates</h4>
+        <span class="section-line-item breaking-change"><b>All Forecast FIM Services (NOAA Internal):</b> Added QC FIM sublayers which consists of impact of FIM against FEMA building footprint datasets and also rating curve skill against forecast values used for FIM. The fim_config field has been replaced by branch. The stage field has been replaced by HAND stage</span>
+        <span class="section-line-item"><b>FIM Performance (NOAA Internal):</b> Added new catchment based metric layer</span>
+        <span class="section-line-item"><b>CatFIM (NOAA Internal):</b> Added additional fields and metadata for locations</span>
+        <span class="section-line-item"><b>Hawaii and Puerto Rico Services:</b> Fixed null value issues</span>
       </div>
       <div class="section-body">
         <span><b>To try out these updates ahead of time, please use our test services.</b></span>
@@ -50,6 +44,24 @@
       <div class="section-header">
         <h2>Previous ASI Maintenance Windows</h2>
       </div><div class="section">
+        <div class="section-body">
+          <h3 class="section-body-title">January 19, 2023 (9:30AM to 11:30AM Central Time)</h3>
+          <h4 class="section-body-subtitle">New Services</h4>
+          <span class="section-line-item"><b>AnA Streamflow Analysis - Hawaii (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for the state of Hawaii. Updated hourly.</span>
+          <span class="section-line-item"><b>AnA Streamflow Analysis - Puerto Rico/U.S. Virgin Islands (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for Puerto Rico and the U.S. Virgin Islands. Updated hourly.</span>
+          <h4 class="section-body-subtitle">Service Updates</h4>
+          <span class="section-line-item"><b>All AnA (Analysis) Services:</b> Added Reference Time and Valid Time attributes to all AnA services.</span>
+          <span class="section-line-item"><b>Peak Flow Arrival Time Services:</b> Added units (" (hours)") to the Peak Flow Arrival Time and Below Bank Return Time fields. Fixed Line Thickness Issues. Removed the extra "feature_id" variable showing up in the HI and PR/VI Peak Flow services</span>
+          <span class="section-line-item"><b>Medium Range Rapid Onset Flooding:</b> Added "or Beyond Forecast" wording for duration layer.</span>
+          <span class="section-line-item"><b>Short Range High Water Arrival Time - Hawaii:</b> Removed the "or Beyond Forecast" for the arrival time layer.</span>
+          <span class="section-line-item"><b>Short Range Rate of Change:</b> Add % to categories in legend. Fixed field aliases to match layer, i.e. 3-Hour flow for 3 Hour layer, 6-Hour flow for 6 Hour layer, etc. </span>
+          <h4 class="section-body-subtitle">General Updates</h4>
+          <span class="section-line-item"><b>Service Descriptions:</b> Updated descriptions to include the update frequency.</span>
+          <span class="section-line-item"><b>Map Names:</b> Updated map names to have better consistency across services. Pattern is "{Model} {Time Period if applicable} {Service} {- Domain (if not for CONUS)}. For example "NWM Past 72 Hours Accumulated Precipitation Analysis - Hawaii" or "NWM Short-Range Accumulated Precipitation Forecast".</span>
+          <span class="section-line-item"><b>Layer Names:</b> Updated layer names to have better consistency across services. Pattern is "{Time Period if applicable -} {Service}". For example, "Past 1 Hour - Accumulated Precipitation" or "3 Days - Peak Flow Arrival Time"</span>
+          <span class="section-line-item breaking-change"><b>Feature ID Field:</b> The field alias has not changed but the field name has been changed from "feature_id_str" to "feature_id". The field type will continue to be string</span>
+          <span class="section-line-item breaking-change"><b>Hydro ID Field:</b> The field alias has not changed but the field name has been changed from "hydro_id_str" to "hydro_id". The field type will continue to be string</span>
+        </div>
         <div class="section-body">
           <h3 class="section-body-title">December 6, 2022 (3PM to 5PM Central Time)</h3>
           <h4 class="section-body-subtitle">Service Updates</h4>
