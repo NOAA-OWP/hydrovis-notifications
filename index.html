@@ -24,17 +24,21 @@
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
       <div class="section-body">
-        <h3 class="section-body-title">March 8, 2023 (9:30AM to 11:30AM Central Time)</h3>
-        <p>Due to severe weather, we are postponing our latest release from March 2 to March 8 at 9:30 AM. Sorry for any inconvenience.</p>
+        <h3 class="section-body-title">May 4, 2023 (8:30AM to 12:30AM Central Time)</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
-        <span class="section-line-item"><b>FIM4 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated to use FIM version 4 datasets instead of the prior version 3 datasets. This is a significant update to our services.</span>
+        <span class="section-line-item"><b>FIM 4.3 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.0 to 4.3.</span>
         <h4 class="section-body-subtitle">New Services</h4>
-        <span class="section-line-item"><b>SRC Skill (NOAA Internal):</b> Depicts a statistical analysis of water surface elevation (ft) between the synthetic HAND rating curves and USGS rating curves.</span>
+        <span class="section-line-item"><b>Soil Moisture Analysis (NOAA Internal):</b> Depicts the soil moisture output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+        <span class="section-line-item"><b>Snow Depth Analysis (NOAA Internal):</b> Depicts the snow depth output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+        <span class="section-line-item"><b>Soil Water Equivalent Analysis (NOAA Internal):</b> Depicts the snow water equivalent output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+        <span class="section-line-item"><b>Soil Moisture Ice Content Analysis (NOAA Internal):</b> Depicts the soil moisture ice content output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+        <span class="section-line-item"><b>Past 72 Hour Snow Water Equivalent Change Analysis (NOAA Internal):</b> Depicts snow water equivalent changes over the past 24, 48, and 72 hours derived from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+        <span class="section-line-item"><b>Past 24 Hour Snow Melt Analysis (NOAA Internal):</b> Depicts snow melt over the past 24 hours derived from the operational National Water Model analysis and assimilation. Updated daily.</span>
         <h4 class="section-body-subtitle">Service Updates</h4>
-        <span class="section-line-item breaking-change"><b>All Forecast FIM Services (NOAA Internal):</b> Added QC FIM sublayers which consists of impact of FIM against FEMA building footprint datasets and also rating curve skill against forecast values used for FIM. The fim_config field has been replaced by branch. The stage field has been replaced by HAND stage</span>
-        <span class="section-line-item"><b>FIM Performance (NOAA Internal):</b> Added new catchment based metric layer</span>
-        <span class="section-line-item"><b>CatFIM (NOAA Internal):</b> Added additional fields and metadata for locations</span>
-        <span class="section-line-item"><b>Hawaii and Puerto Rico Services:</b> Fixed null value issues</span>
+        <span class="section-line-item"><b>All Forecast FIM Services (NOAA Internal):</b> Updated scale at which the inundation will render to match the other services and improve render speeds.</span>
+        <span class="section-line-item"><b>Stage Based CatFIM (NOAA Internal):</b> Added 1 ft interval to layers. Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
+        <span class="section-line-item"><b>Flow Based CatFIM (NOAA Internal):</b> Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
+        <span class="section-line-item"><b>SRF/MRF Rapid Onset Flooding Probability:</b> Fixed logic to indicate if ROF conditions will be met on any given day instead of when the first instance of ROF conditions will be met.</span>
       </div>
       <div class="section-body">
         <span><b>To try out these updates ahead of time, please use our test services.</b></span>
@@ -46,7 +50,19 @@
         <h2>Previous ASI Maintenance Windows</h2>
       </div><div class="section">
         <div class="section-body">
-          <h3 class="section-body-title">January 19, 2023 (9:30AM to 11:30AM Central Time)</h3>
+          <h3 class="section-body-title">March 8, 2023</h3>
+          <h4 class="section-body-subtitle">General Updates</h4>
+          <span class="section-line-item"><b>FIM4 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated to use FIM version 4 datasets instead of the prior version 3 datasets. This is a significant update to our services.</span>
+          <h4 class="section-body-subtitle">New Services</h4>
+          <span class="section-line-item"><b>SRC Skill (NOAA Internal):</b> Depicts a statistical analysis of water surface elevation (ft) between the synthetic HAND rating curves and USGS rating curves.</span>
+          <h4 class="section-body-subtitle">Service Updates</h4>
+          <span class="section-line-item breaking-change"><b>All Forecast FIM Services (NOAA Internal):</b> Added QC FIM sublayers which consists of impact of FIM against FEMA building footprint datasets and also rating curve skill against forecast values used for FIM. The fim_config field has been replaced by branch. The stage field has been replaced by HAND stage</span>
+          <span class="section-line-item"><b>FIM Performance (NOAA Internal):</b> Added new catchment based metric layer</span>
+          <span class="section-line-item"><b>CatFIM (NOAA Internal):</b> Added additional fields and metadata for locations</span>
+          <span class="section-line-item"><b>Hawaii and Puerto Rico Services:</b> Fixed null value issues</span>
+        </div>
+        <div class="section-body">
+          <h3 class="section-body-title">January 19, 2023</h3>
           <h4 class="section-body-subtitle">New Services</h4>
           <span class="section-line-item"><b>AnA Streamflow Analysis - Hawaii (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for the state of Hawaii. Updated hourly.</span>
           <span class="section-line-item"><b>AnA Streamflow Analysis - Puerto Rico/U.S. Virgin Islands (NOAA Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for Puerto Rico and the U.S. Virgin Islands. Updated hourly.</span>
