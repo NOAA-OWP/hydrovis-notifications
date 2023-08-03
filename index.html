@@ -24,368 +24,120 @@
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
       <div class="section-body">
-        <h3 class="section-body-title">July 6, 2023 - V2.1.0 (9AM to 12PM Central Time)</h3>
+        <h3 class="section-body-title">August 10, 2023 - V2.1.1 (9AM to 12PM Central Time)</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
-        <span class="section-line-item breaking-change"><b>Naming Standardizing:</b> We have gone through all of our services and established a standardized naming convention to facilitate easier navigation and better understand of what data is being viewed from the name.
-        Name changes can be found at the bottom of this notification section. Naming convention is as follows:</span>
-        <div style="display:block;margin-left:auto;margin-right:auto;width:60%;" class="breaking-change">
-          <b >(model type)_(forecast period?)_(max?)_(product)_(domain?)_(noaa?)</b>
-          <ul>
-            <li>Model Type (required): Indicates what model data is being processes. i.e. ana, srf, mrf, rfc, static, etc</li>
-            <li>Forecast Period (optional): Indicates forecast period being analyzed</li>
-            <li>Max (optional): Indicates if the data being analyzed is the max value across the forecast or not</li>
-            <li>Product (required): Name of the data product</li>
-            <li>Domain (optional): Indicates the domain that is being processed. If no domain is present, then the service is for CONUS</li>
-            <li>NOAA(optional): Indicates if the service is internal or public. All internal services end in “_noaa” </li>
-          </ul>
-        </div>
-        <span class="section-line-item"><b>FIM 4.3.11.0 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.3.3.4 to 4.3.11.0</span>
+        <span class="section-line-item"><b>NWM 3.0 Implementation:</b> The NWM 3.0 will be deployed operationally soon. Check out this <a href="https://www.weather.gov/media/notification/pdf_2023_24/pns23-06_nwm_v3.0.pdf">Public Information Statement</a> for more information on the specific NWM updates. This HydroVIS update will update infrastructure to handle the new files and add new services for the new NWM configurations once NWM 3.0 goes live.</span>
         <h4 class="section-body-subtitle">New Services</h4>
-        <span class="section-line-item"><b>NWM Analysis Assim Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the inundation extent of the National Water Model (NWM) streamflow forecast in the 10% public FIM domain where the NWM is signaling high water. 
-          This service is derived from the analysis and assimilation configuration of the NWM over the contiguous U.S. Updated hourly.</span>
-        <span class="section-line-item"><b>NWM Medium Range (GFS) 5 Day Max Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the inundation extent of the peak National Water Model (NWM) streamflow forecast in the 10% public FIM domain
-          over the next 5 days where the NWM is signaling high water. This service is derived from the medium-range GFS configuration of the NWM over the contiguous U.S. Updated every 6 hours.</span>
-        <span class="section-line-item"><b>RFC Based 5 Day Max Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts maximum inundation extent over the next 5 days in the 10% public FIM domain derived from the official River Forecast Center 
-          (RFC) forecast routed downstream through the National Water Model (NWM) stream network. Updated hourly.</span>
-        <span class="section-line-item"><b>Static Public FIM Domain (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the WFO domains where the FIM will be publicly available. This domain currently covers an area that serves 10% of the U.S. population.</span>
-        <span class="section-line-item"><b>Static NWM Waterbodies - Hawaii:</b> Depicts the waterbodies for the National Water Model within Hawaii.</span>
-        <span class="section-line-item"><b>Static NWM Waterbodies - Puerto Rico and U.S. Virgin Islands:</b> Depicts the waterbodies for the National Water Model within Puerto Rico and Virgin Islands.</span>
-        <h4 class="section-body-subtitle breaking-change">Service Name Changes</h4>
-        <b>NWM Analysis and Assimilation</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation/MapServer" target="_blank">ana_inundation</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_noaa_beta/MapServer" target="_blank">ana_inundation_extent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_inundation/MapServer" target="_blank">ana_past_14day_max_inundation</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_inundation_extent_noaa_beta/MapServer" target="_blank">ana_past_14day_max_inundation_extent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_anomaly/MapServer" target="_blank">ana_anomaly</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_anomaly_beta/MapServer" target="_blank">ana_anomaly</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude/MapServer" target="_blank">ana_high_flow_magnitude</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_beta/MapServer" target="_blank">ana_high_flow_magnitude</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_high_flow_magnitude/MapServer" target="_blank">ana_past_14day_max_high_flow_magnitude</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_high_flow_magnitude_beta/MapServer" target="_blank">ana_past_14day_max_high_flow_magnitude</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow/MapServer" target="_blank">ana_streamflow</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_noaa_beta/MapServer" target="_blank">ana_streamflow_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip/MapServer" target="_blank">ana_72hr_accum_precip</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_snow_depth/MapServer" target="_blank">ana_snow_depth</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_snow_depth_noaa_beta/MapServer" target="_blank">ana_snow_depth_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_snow_water_equiv/MapServer" target="_blank">ana_snow_water_equiv</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_snow_water_equivalent_noaa_beta/MapServer" target="_blank">ana_snow_water_equivalent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture/MapServer" target="_blank">ana_soil_moisture</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_noaa_beta/MapServer" target="_blank">ana_soil_moisture_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_ice_content/MapServer" target="_blank">ana_soil_moisture_ice_content</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_ice_content_noaa_beta/MapServer" target="_blank">ana_soil_moisture_ice_content_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_snow_water_equiv_change/MapServer" target="_blank">ana_72hr_snow_water_equiv_change</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_snow_water_equivalent_change_noaa_beta/MapServer" target="_blank">ana_past_72hr_snow_water_equivalent_change_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Analysis and Assimilation - Hawaii</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation_hi/MapServer" target="_blank">ana_inundation_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_hi_noaa_beta/MapServer" target="_blank">ana_inundation_extent_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_hi/MapServer" target="_blank">ana_high_flow_magnitude_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_hi_beta/MapServer" target="_blank">ana_high_flow_magnitude_hi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow_hi/MapServer" target="_blank">ana_streamflow_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_hi_noaa_beta/MapServer" target="_blank">ana_streamflow_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip_hi/MapServer" target="_blank">ana_72hr_accum_precip_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_hi_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_hi_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Analysis and Assimilation - Puerto Rico</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation_prvi/FeatureServer" target="_blank">ana_inundation_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_prvi_noaa_beta/MapServer" target="_blank">ana_inundation_extent_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_prvi/MapServer" target="_blank">ana_high_flow_magnitude_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_prvi_beta/MapServer" target="_blank">ana_high_flow_magnitude_prvi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow_prvi/MapServer" target="_blank">ana_streamflow_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_prvi_noaa_beta/MapServer" target="_blank">ana_streamflow_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip_prvi/MapServer" target="_blank">ana_72hr_accum_precip_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_prvi_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_prvi_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Short Range</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation/MapServer" target="_blank">srf_max_inundation</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_max_inundation_extent_noaa_beta/MapServer" target="_blank">srf_18hr_max_inundation_extent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude/MapServer" target="_blank">srf_max_high_flow_magnitude</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_max_high_flow_magnitude_beta/MapServer" target="_blank">srf_18hr_max_high_flow_magnitude</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time/MapServer" target="_blank">srf_high_water_arrival_time</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_high_water_arrival_time_beta/MapServer" target="_blank">srf_18hr_high_water_arrival_time</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_probability/MapServer" target="_blank">srf_high_water_probability</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_12hr_max_high_water_probability_beta/MapServer" target="_blank">srf_12hr_max_high_water_probability</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time/MapServer" target="_blank">srf_peak_flow_arrival_time</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_peak_flow_arrival_time_noaa_beta/MapServer" target="_blank">srf_18hr_peak_flow_arrival_time_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rapid_onset_flooding_probability/MapServer" target="_blank">srf_rapid_onset_flooding_probability</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_12hr_rapid_onset_flooding_probability_beta/MapServer" target="_blank">srf_12hr_rapid_onset_flooding_probability</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rapid_onset_flooding/MapServer" target="_blank">srf_rapid_onset_flooding</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_rapid_onset_flooding_beta/MapServer" target="_blank">srf_18hr_rapid_onset_flooding</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rate_of_change/MapServer" target="_blank">srf_rate_of_change</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_rate_of_change_noaa_beta/MapServer" target="_blank">srf_18hr_rate_of_change_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip/MapServer" target="_blank">srf_accum_precip</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_18hr_accum_precip_noaa_beta/MapServer" target="_blank">srf_18hr_accum_precip_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Short Range - Hawaii</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation_hi/MapServer" target="_blank">srf_max_inundation_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_inundation_extent_hi_noaa_beta/MapServer" target="_blank">srf_48hr_max_inundation_extent_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time_hi/MapServer" target="_blank">srf_high_water_arrival_time_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_high_water_arrival_time_hi_beta/MapServer" target="_blank">srf_48hr_high_water_arrival_time_hi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude_hi/MapServer" target="_blank">srf_max_high_flow_magnitude_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_high_flow_magnitude_hi_beta/MapServer" target="_blank">srf_48hr_max_high_flow_magnitude_hi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time_hi/MapServer" target="_blank">srf_peak_flow_arrival_time_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_peak_flow_arrival_time_hi_noaa_beta/MapServer" target="_blank">srf_48hr_peak_flow_arrival_time_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip_hi/MapServer" target="_blank">srf_accum_precip_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_48hr_accum_precip_hi_noaa_beta/MapServer" target="_blank">srf_48hr_accum_precip_hi_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Short Range - Puerto Rico</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation_prvi/FeatureServer" target="_blank">srf_max_inundation_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_inundation_extent_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_max_inundation_extent_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time_prvi/MapServer" target="_blank">srf_high_water_arrival_time_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_high_water_arrival_time_prvi_beta/MapServer" target="_blank">srf_48hr_high_water_arrival_time_prvi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude_prvi/MapServer" target="_blank">srf_max_high_flow_magnitude_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_high_flow_magnitude_prvi_beta/MapServer" target="_blank">srf_48hr_max_high_flow_magnitude_prvi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time_prvi/MapServer" target="_blank">srf_peak_flow_arrival_time_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_peak_flow_arrival_time_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_peak_flow_arrival_time_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip_prvi/MapServer" target="_blank">srf_accum_precip_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_48hr_accum_precip_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_accum_precip_prvi_noaa</a></td>
-          </tr>
-        </table>
-        <b>NWM Medium Range</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_max_inundation/MapServer" target="_blank">mrf_max_inundation</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_max_inundation_extent_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_max_inundation_extent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_high_water_arrival_time/MapServer" target="_blank">mrf_high_water_arrival_time</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_high_water_arrival_time_beta/MapServer" target="_blank">mrf_gfs_10day_high_water_arrival_time</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_high_water_probability/MapServer" target="_blank">mrf_high_water_probability</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_5day_high_water_probability_beta/MapServer" target="_blank">mrf_gfs_5day_high_water_probability</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_max_high_flow_magnitude/MapServer" target="_blank">mrf_max_high_flow_magnitude</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_max_high_flow_magnitude_beta/MapServer" target="_blank">mrf_gfs_10day_max_high_flow_magnitude</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_peak_flow_arrival_time/MapServer" target="_blank">mrf_peak_flow_arrival_time</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_peak_flow_arrival_time_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_peak_flow_arrival_time_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_rapid_onset_flooding_probability/MapServer" target="_blank">mrf_rapid_onset_flooding_probability</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_5day_rapid_onset_flooding_probability_beta/MapServer" target="_blank">mrf_gfs_5day_rapid_onset_flooding_probability</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_rapid_onset_flooding/MapServer" target="_blank">mrf_rapid_onset_flooding</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_rapid_onset_flooding_beta/MapServer" target="_blank">mrf_gfs_10day_rapid_onset_flooding</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/mrf_accum_precip/MapServer" target="_blank">mrf_accum_precip</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/mrf_gfs_10day_accum_precip_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_accum_precip_noaa</a></td>
-          </tr>
-        </table>
-        <b>RFC Based</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_5day_max_downstream_inundation/MapServer" target="_blank">rfc_5day_max_downstream_inundation</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_based_5day_max_inundation_extent_noaa_beta/MapServer" target="_blank">rfc_based_5day_max_inundation_extent_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_5day_max_downstream_streamflow/MapServer" target="_blank">rfc_5day_max_downstream_streamflow</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_based_5day_max_streamflow_beta/MapServer" target="_blank">rfc_based_5day_max_streamflow</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_max_stage/MapServer" target="_blank">rfc_max_stage</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_max_forecast_beta/MapServer" target="_blank">rfc_max_forecast</a></td>
-          </tr>
-        </table>
-        <b>QC FIM</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/flow_based_catfim/MapServer" target="_blank">flow_based_catfim</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_flow_based_catfim_noaa_beta/MapServer" target="_blank">static_flow_based_catfim_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/stage_based_catfim/MapServer" target="_blank">stage_based_catfim</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_stage_based_catfim_noaa_beta/MapServer" target="_blank">static_stage_based_catfim_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/nwm_aep_fim/MapServer" target="_blank">nwm_aep_fim</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_nwm_aep_inundation_extent_library_noaa_beta/MapServer" target="_blank">static_nwm_aep_inundation_extent_library_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/possible_coastal_omission/MapServer" target="_blank">possible_coastal_omission</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_coastal_domain_noaa_beta/MapServer" target="_blank">static_nwm_coastal_domain_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments_hi/MapServer" target="_blank">branch_0_catchments_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_hi_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments_prvi/MapServer" target="_blank">branch_0_catchments_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_prvi_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments/MapServer" target="_blank">branch_0_catchments</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments_hi/MapServer" target="_blank">branch_gms_catchments_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_hi_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_hi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments_prvi/MapServer" target="_blank">branch_gms_catchments_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_prvi_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_prvi_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments/MapServer" target="_blank">branch_gms_catchments</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/src_skill/MapServer" target="_blank">src_skill_beta</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_rating_curve_performance_metrics_noaa_beta/MapServer" target="_blank">static_hand_rating_curve_performance_metrics_noaa</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/fim_performance/MapServer" target="_blank">fim_performance</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_inundation_performance_metrics_noaa_beta/MapServer" target="_blank">static_hand_inundation_performance_metrics_noaa</a></td>
-          </tr>
-        </table>
-        <b>Reference</b>
-        <table>
-          <tr>
-            <th>Current Name (Production)</th>
-            <th>New Name (Staging)</th>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines_hi/MapServer" target="_blank">nwm_flowlines_hi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_hi_beta/MapServer" target="_blank">static_nwm_flowlines_hi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines_prvi/MapServer" target="_blank">nwm_flowlines_prvi</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_prvi_beta/MapServer" target="_blank">static_nwm_flowlines_prvi</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines/FeatureServer" target="_blank">nwm_flowlines</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_beta/MapServer" target="_blank">static_nwm_flowlines</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_waterbodies/MapServer" target="_blank">nwm_waterbodies</a></td>
-            <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_waterbodies_beta/MapServer" target="_blank">static_nwm_waterbodies</a></td>
-          </tr>
-        </table>
-      </div>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day High Water Arrival Time (Internal):</b> Depicts the forecast arrival time of high water over the next 10 days. This service is derived from the 
+          medium-range NBM configuration of the National Water Model (NWM) over the contiguous U.S. Shown are reaches that are 
+          expected to have flow at or above the high water threshold over the next 10 days. Reaches are colored by the time 
+          at which they are forecast to reach high water (calculated in 3 hour increments). High water thresholds 
+          (regionally varied) were derived using the 40-year NWM v2.1 reanalysis simulation. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Max High Flow Magnitude (Internal):</b> Depicts the magnitude of the peak National Water Model (NWM) streamflow forecast over the next 
+          3, 5 and 10 days where the NWM is signaling high water. This service is derived from the medium-range NBM 
+          configuration of the NWM over the contiguous U.S. Shown are reaches with peak flow at or above high water 
+          thresholds. Reaches are colored by the annual exceedance probability (AEP) of their forecast peak flow. 
+          High water thresholds (regionally varied) and AEPs were derived using the 40-year NWM v2.1 reanalysis 
+          simulation. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Max Inundation Extent (Internal):</b> Depicts the inundation extent of the peak National Water Model (NWM) streamflow forecast 
+          over the next 3, 5, and 10 days where the NWM is signaling high water. This service is derived from 
+          the medium-range NBM configuration of the NWM over the contiguous U.S. Shown are reaches with peak flow 
+          at or above high water thresholds. High water thresholds (regionally varied) and AEPs were derived 
+          using the 40-year NWM v2.1 reanalysis simulation. Updated every 6 hours.
+        
+          SRC Skill: Depicts USGS sites that have an official rating curve, symbolized by the "skill" of the 
+          synthetic rating curve compared to the official USGS rating curve. Each point is symbolized by the 
+          mean difference in Water Surface Elevation (WSE) between the two curves.
+        
+          Estimated Impacted Buildings: Depicts building footprints that intersect inundation extents. The source 
+          of the building data is the FEMA USA Structures dataset: https://gis-fema.hub.arcgis.com/pages/usa-structures 
+          (as of August, 2022). Occupancy type data is only available for AL, CA, FL, GA, LA, MS, NC, SC, TX, 
+          and VA at this time. Also shown are a relative density heatmap of potentially impacted buildings 
+          (based on extent), county, and HUC level summary layers.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Peak Flow Arrival Time (Internal):</b> Depicts expected peak flow arrival times derived from the operational National Water 
+          Model (NWM) medium-range NBM forecast. Shown are reaches that are expected to have flow at or above 
+          the high water threshold over the next 3 and 10 days. Reaches are colored by the time at which 
+          they are expected to be at their maximum flow within the forecast period. High water flows were 
+          derived using a 40-year retrospective analysis of the NWM (v2.1). Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Rapid Onset Flooding (Internal):</b> Depicts forecast rapid onset flooding using the medium-range NBM configuration of the 
+          National Water Model (NWM) over the contiguous U.S. Shown are reaches (stream order 4 and below) 
+          with a forecast flow increase of 100% or greater within 3 hours, and which are expected to be 
+          at or above the high water threshold within 6 hours of that increase (all calculated in 3 hour 
+          increments). Also shown are USGS HUC08 polygons symbolized by the percentage of NWM waterway 
+          length (within each HUC08) that is expected to meet the previously mentioned criteria. High 
+          water thresholds (regionally varied) were derived using the 40-year NWM v2.1 reanalysis 
+          simulation. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Accumulated Precipitation (Internal):</b> Depicts expected accumulated precipitation totals over the next 10 days derived from the NBM forcing for the 
+          operational National Water Model (NWM) medium-range forecast for the contiguous U.S. Updated every 6 hours.</span>
+
+        <span class="section-line-item"><b>AnA Streamflow Alaska (Internal):</b> Depicts the streamflow output from the operational National Water Model (NWM) analysis and assimilation for Alaska. Updated hourly.</span>
+        <span class="section-line-item"><b>Short-Range 15 Hour Peak Flow Arrival Time Alaska (Internal):</b> Depicts expected peak flow arrival times derived from the operational National 
+          Water Model (NWM) short-range forecast for Alaska. Reaches are colored by the time at 
+          which they are expected to be at their maximum flow within the forecast period. Updated hourly.</span>
+        <span class="section-line-item"><b>Medium-Range GFS 10 Day Peak Flow Arrival Time Alaska (Internal):</b> Depicts expected peak flow arrival times derived from the operational National Water 
+          Model (NWM) medium-range GFS forecast for Alaska. Reaches are colored by the time at which 
+          they are expected to be at their maximum flow within the forecast period. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Peak Flow Arrival Time Alaska (Internal):</b> Depicts expected peak flow arrival times derived from the operational National Water 
+          Model (NWM) medium-range NBM forecast for Alaska. Reaches are colored by the time at which 
+          they are expected to be at their maximum flow within the forecast period. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>AnA Past 72 Hour Accumulated Precipitation Alaska (Internal):</b> Depicts accumulated precipitation totals over the past 72 hours derived from the NAM-NEST NWP forcing for 
+          the operational National Water Model (NWM) analysis and assimilation for the state of Alaska. Updated hourly.</span>
+        <span class="section-line-item"><b>Short-Range 15 Hour Accumulated Precipitation Alaska (Internal):</b> Depicts expected accumulated precipitation totals over the next 15 hours derived from the NAM-Nest with 
+          HIRESW WRF-ARW forcing for the operational National Water Model (NWM) short-range forecast for the state of Alaska. 
+          Updated every 12 hours.</span>
+        <span class="section-line-item"><b>Medium-Range GFS 10 Day Accumulated Precipitation Alaska (Internal):</b> Depicts expected accumulated precipitation totals over the next 10 days derived from the GFS forcing for the 
+          operational National Water Model (NWM) medium-range forecast for the state of Alaska. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Accumulated Precipitation Alaska (Internal):</b> Depicts expected accumulated precipitation totals over the next 10 days derived from the NBM forcing for the 
+          operational National Water Model (NWM) medium-range forecast for the state of Alaska. Updated every 6 hours.</span>
+
+        <span class="section-line-item"><b>AnA Coastal Inundation Extent (Internal):</b> Depicts the inundation extent of the National Water Model (NWM) total water level forecast.
+          This service is derived from the analysis and assimilation configuration of the NWM over the contiguous U.S. 
+          Updated hourly.</span>
+        <span class="section-line-item"><b>AnA Coastal Inundation Depth (Internal):</b> Depicts the inundation depth of the National Water Model (NWM) total water level forecast. 
+          This service is derived from the analysis and assimilation configuration of the NWM over the contiguous U.S. 
+          Updated hourly.</span>
+        <span class="section-line-item"><b>AnA Coastal Inundation Extent Hawaii (Internal):</b> Depicts the inundation extent of the National Water Model (NWM) total water level forecast.
+          This service is derived from the analysis and assimilation configuration of the NWM over Hawaii. 
+          Updated hourly.</span>
+        <span class="section-line-item"><b>AnA Coastal Inundation Depth Hawaii (Internal):</b> Depicts the inundation depth of the National Water Model (NWM) total water level forecast. 
+          This service is derived from the analysis and assimilation configuration of the NWM over Hawaii.
+          Updated hourly.</span>
+        <span class="section-line-item"><b>AnA Coastal Inundation Extent Puerto Rico (Internal):</b> Depicts the inundation extent of the National Water Model (NWM) total water level forecast.
+          This service is derived from the analysis and assimilation configuration of the NWM over Puerto Rico and the U.S. Virgin Islands.
+          Updated hourly.</span>
+        <span class="section-line-item"><b>AnA Coastal Inundation Depth Puerto Rico (Internal):</b> Depicts the inundation depth of the National Water Model (NWM) total water level forecast. 
+          This service is derived from the analysis and assimilation configuration of the NWM over Puerto Rico and the U.S. Virgin Islands.
+          Updated hourly.</span>
+        <span class="section-line-item"><b>Medium-Range GFS 10 Day Max Coastal Inundation Extent (Internal):</b> Depicts the inundation extent of the peak National Water Model (NWM) total water level forecast 
+          over the next 3, 5, and 10 days. This service is derived from the medium-range GFS configuration of the NWM 
+          over the contiguous U.S. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Medium-Range GFS 10 Day Max Coastal Inundation Depth (Internal):</b> Depicts the inundation depth of the peak National Water Model (NWM) total water level forecast 
+          over the next 3, 5, and 10 days. This service is derived from the medium-range GFS configuration of the NWM 
+          over the contiguous U.S. Updated every 6 hours.</span>
+        <span class="section-line-item"><b>Short-Range 18 Hour Max Coastal Inundation Extent (Internal):</b> Depicts the peak inundation extent of the National Water Model (NWM) total water level forecast 
+          over the next 18 hours. This service is derived from the short-range configuration of the 
+          NWM over the contiguous U.S. Updated hourly.</span>
+        <span class="section-line-item"><b>Short-Range 18 Hour Max Coastal Inundation Depth (Internal):</b> Depicts the peak inundation depth of the National Water Model (NWM) total water level forecast 
+          over the next 18 hours. This service is derived from the short-range configuration of the 
+          NWM over the contiguous U.S. Updated hourly.</span>
+        <span class="section-line-item"><b>Short-Range 48 Hour Max Coastal Inundation Extent Hawaii (Internal):</b> Depicts the peak inundation extent of the National Water Model (NWM) total water level forecast 
+          over the next 48 hours. This service is derived from the short-range configuration of the 
+          NWM over Hawaii. Updated every 12 hours.</span>
+        <span class="section-line-item"><b>Short-Range 48 Hour Max Coastal Inundation Depth Hawaii (Internal):</b> Depicts the peak inundation depth of the National Water Model (NWM) total water level forecast 
+          over the next 48 hours. This service is derived from the short-range configuration of the 
+          NWM over Hawaii. Updated every 12 hours.</span>
+        <span class="section-line-item"><b>Short-Range 48 Hour Max Coastal Inundation Extent Puerto Rico (Internal):</b> Depicts the peak inundation extent of the National Water Model (NWM) total water level forecast 
+          over the next 48 hours. This service is derived from the short-range configuration of the 
+          NWM over Puerto Rico and the U.S. Virgin Islands. Updated every 12 hours.</span>
+        <span class="section-line-item"><b>Short-Range 48 Hour Max Coastal Inundation Depth Puerto Rico (Internal):</b> Depicts the peak inundation depth of the National Water Model (NWM) total water level forecast 
+          over the next 48 hours. This service is derived from the short-range configuration of the 
+          NWM over Puerto Rico and the U.S. Virgin Islands. Updated every 12 hours.</span>
+      
+          <h4 class="section-body-subtitle">Bug Fixes</h4>
+          <span class="section-line-item"><b>Rapid Onset Flooding HUC Summaries:</b> For the ROF HUC summary layer, we calculate the percentage of reach length flooded within the certain HUC. The value of the total possible reach length within a HUC was not correct and thus producing incorrect percentages. We have updated this value and the percentages look more reasonable now. </span>
+          <span class="section-line-item"><b>Short Range 48 Hour Max Inundation Extent - Puerto Rico:</b> The SRF max inundation service for Puerto Rico was incorrectly joining flowlines to the processed data which was resulting in null stream orders. These null stream orders were causing the symbology to not work correctly and hiding all inundation.</span>
+          <span class="section-line-item"><b>RFC Service Status Routing Issues:</b> The workflow for replace and route and the corresponding services takes a forecast and routes the status downstream until a new RFC defined forecast point is reached. When the new point is reached, the new forecast status (whether no forecast, no flooding, or action+) is then used. In some cases, forecasts are issued at sites that are not at defined forecast points but where events are occurring. In these cases, the max status ends up being “Undetermined” instead of the actual forecast status. We have updated our algorithm to use the RFC defined forecast points AND points where live forecasts are being issued so that actual forecast statuses are used. </span>
+        </div>
       <div class="section-body">
         <span><b>To try out these updates ahead of time, please use our test services.</b></span>
         <div class="button" style="width: 12rem;"><a href="https://maps-staging.water.noaa.gov/portal/home/" target="_blank">HydroVIS Testing Services</a></div>
@@ -395,30 +147,393 @@
       <div class="section-header">
         <h2>Previous ASI Maintenance Windows</h2>
       </div><div class="section">
-      <div class="section-body">
-        <h3 class="section-body-title">May 9, 2023 (4PM to 6PM Central Time)</h3>
-        <h4 class="section-body-subtitle">Service Updates</h4>
-        <span class="section-line-item"><b>RFC Max Stage:</b> Removed record forecasts from the forecast trend layer so that threshold values will not be hid. Moved record forecasts into a new layer.</span>
-        <span class="section-line-item"><b>AnA Soil Moisture (NOAA Internal):</b> Added missing oid fields.</span>
-        <span class="section-line-item"><b>AnA Soil Moisture Ice Content (NOAA Internal):</b> Added missing oid fields.</span>
-        <span class="section-line-item"><b>AnA Snow Depth (NOAA Internal):</b> Added missing oid fields.</span>
-      </div>
-      <div class="section-body">
-        <h3 class="section-body-title">May 4, 2023 (8:30AM to 12:30AM Central Time)</h3>
-        <h4 class="section-body-subtitle">General Updates</h4>
-        <span class="section-line-item"><b>FIM 4.3 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.0 to 4.3.</span>
-        <h4 class="section-body-subtitle">New Services</h4>
-        <span class="section-line-item"><b>Soil Moisture Analysis (NOAA Internal):</b> Depicts the soil moisture output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
-        <span class="section-line-item"><b>Snow Depth Analysis (NOAA Internal):</b> Depicts the snow depth output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
-        <span class="section-line-item"><b>Soil Water Equivalent Analysis (NOAA Internal):</b> Depicts the snow water equivalent output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
-        <span class="section-line-item"><b>Soil Moisture Ice Content Analysis (NOAA Internal):</b> Depicts the soil moisture ice content output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
-        <span class="section-line-item"><b>Past 72 Hour Snow Water Equivalent Change Analysis (NOAA Internal):</b> Depicts snow water equivalent changes over the past 24, 48, and 72 hours derived from the operational National Water Model analysis and assimilation. Updated hourly.</span>
-        <h4 class="section-body-subtitle">Service Updates</h4>
-        <span class="section-line-item"><b>All Forecast FIM Services (NOAA Internal):</b> Updated scale at which the inundation will render to match the other services and improve render speeds.</span>
-        <span class="section-line-item"><b>Stage Based CatFIM (NOAA Internal):</b> Added 1 ft interval to layers. Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
-        <span class="section-line-item"><b>Flow Based CatFIM (NOAA Internal):</b> Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
-        <span class="section-line-item"><b>SRF/MRF Rapid Onset Flooding Probability:</b> Fixed logic to indicate if ROF conditions will be met on any given day instead of when the first instance of ROF conditions will be met.</span>
-      </div>
+        <div class="section-body">
+            <h3 class="section-body-title">July 6, 2023 - V2.1.0 (9AM to 12PM Central Time)</h3>
+            <h4 class="section-body-subtitle">General Updates</h4>
+            <span class="section-line-item breaking-change"><b>Naming Standardizing:</b> We have gone through all of our services and established a standardized naming convention to facilitate easier navigation and better understand of what data is being viewed from the name.
+            Name changes can be found at the bottom of this notification section. Naming convention is as follows:</span>
+            <div style="display:block;margin-left:auto;margin-right:auto;width:60%;" class="breaking-change">
+              <b >(model type)_(forecast period?)_(max?)_(product)_(domain?)_(noaa?)</b>
+              <ul>
+                <li>Model Type (required): Indicates what model data is being processes. i.e. ana, srf, mrf, rfc, static, etc</li>
+                <li>Forecast Period (optional): Indicates forecast period being analyzed</li>
+                <li>Max (optional): Indicates if the data being analyzed is the max value across the forecast or not</li>
+                <li>Product (required): Name of the data product</li>
+                <li>Domain (optional): Indicates the domain that is being processed. If no domain is present, then the service is for CONUS</li>
+                <li>NOAA(optional): Indicates if the service is internal or public. All internal services end in “_noaa” </li>
+              </ul>
+            </div>
+            <span class="section-line-item"><b>FIM 4.3.11.0 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.3.3.4 to 4.3.11.0</span>
+            <h4 class="section-body-subtitle">New Services</h4>
+            <span class="section-line-item"><b>NWM Analysis Assim Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the inundation extent of the National Water Model (NWM) streamflow forecast in the 10% public FIM domain where the NWM is signaling high water. 
+              This service is derived from the analysis and assimilation configuration of the NWM over the contiguous U.S. Updated hourly.</span>
+            <span class="section-line-item"><b>NWM Medium Range (GFS) 5 Day Max Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the inundation extent of the peak National Water Model (NWM) streamflow forecast in the 10% public FIM domain
+              over the next 5 days where the NWM is signaling high water. This service is derived from the medium-range GFS configuration of the NWM over the contiguous U.S. Updated every 6 hours.</span>
+            <span class="section-line-item"><b>RFC Based 5 Day Max Inundation Extent (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts maximum inundation extent over the next 5 days in the 10% public FIM domain derived from the official River Forecast Center 
+              (RFC) forecast routed downstream through the National Water Model (NWM) stream network. Updated hourly.</span>
+            <span class="section-line-item"><b>Static Public FIM Domain (Currently NOAA internal but will be part of 10% public FIM in September):</b> Depicts the WFO domains where the FIM will be publicly available. This domain currently covers an area that serves 10% of the U.S. population.</span>
+            <span class="section-line-item"><b>Static NWM Waterbodies - Hawaii:</b> Depicts the waterbodies for the National Water Model within Hawaii.</span>
+            <span class="section-line-item"><b>Static NWM Waterbodies - Puerto Rico and U.S. Virgin Islands:</b> Depicts the waterbodies for the National Water Model within Puerto Rico and Virgin Islands.</span>
+            <h4 class="section-body-subtitle breaking-change">Service Name Changes</h4>
+            <b>NWM Analysis and Assimilation</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation/MapServer" target="_blank">ana_inundation</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_noaa_beta/MapServer" target="_blank">ana_inundation_extent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_inundation/MapServer" target="_blank">ana_past_14day_max_inundation</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_inundation_extent_noaa_beta/MapServer" target="_blank">ana_past_14day_max_inundation_extent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_anomaly/MapServer" target="_blank">ana_anomaly</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_anomaly_beta/MapServer" target="_blank">ana_anomaly</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude/MapServer" target="_blank">ana_high_flow_magnitude</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_beta/MapServer" target="_blank">ana_high_flow_magnitude</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_high_flow_magnitude/MapServer" target="_blank">ana_past_14day_max_high_flow_magnitude</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_past_14day_max_high_flow_magnitude_beta/MapServer" target="_blank">ana_past_14day_max_high_flow_magnitude</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow/MapServer" target="_blank">ana_streamflow</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_noaa_beta/MapServer" target="_blank">ana_streamflow_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip/MapServer" target="_blank">ana_72hr_accum_precip</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_snow_depth/MapServer" target="_blank">ana_snow_depth</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_snow_depth_noaa_beta/MapServer" target="_blank">ana_snow_depth_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_snow_water_equiv/MapServer" target="_blank">ana_snow_water_equiv</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_snow_water_equivalent_noaa_beta/MapServer" target="_blank">ana_snow_water_equivalent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture/MapServer" target="_blank">ana_soil_moisture</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_noaa_beta/MapServer" target="_blank">ana_soil_moisture_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_ice_content/MapServer" target="_blank">ana_soil_moisture_ice_content</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_soil_moisture_ice_content_noaa_beta/MapServer" target="_blank">ana_soil_moisture_ice_content_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_snow_water_equiv_change/MapServer" target="_blank">ana_72hr_snow_water_equiv_change</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_snow_water_equivalent_change_noaa_beta/MapServer" target="_blank">ana_past_72hr_snow_water_equivalent_change_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Analysis and Assimilation - Hawaii</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation_hi/MapServer" target="_blank">ana_inundation_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_hi_noaa_beta/MapServer" target="_blank">ana_inundation_extent_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_hi/MapServer" target="_blank">ana_high_flow_magnitude_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_hi_beta/MapServer" target="_blank">ana_high_flow_magnitude_hi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow_hi/MapServer" target="_blank">ana_streamflow_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_hi_noaa_beta/MapServer" target="_blank">ana_streamflow_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip_hi/MapServer" target="_blank">ana_72hr_accum_precip_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_hi_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_hi_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Analysis and Assimilation - Puerto Rico</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation_prvi/FeatureServer" target="_blank">ana_inundation_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent_prvi_noaa_beta/MapServer" target="_blank">ana_inundation_extent_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_prvi/MapServer" target="_blank">ana_high_flow_magnitude_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_high_flow_magnitude_prvi_beta/MapServer" target="_blank">ana_high_flow_magnitude_prvi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_streamflow_prvi/MapServer" target="_blank">ana_streamflow_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/ana_streamflow_prvi_noaa_beta/MapServer" target="_blank">ana_streamflow_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/ana_72hr_accum_precip_prvi/MapServer" target="_blank">ana_72hr_accum_precip_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/ana_past_72hr_accum_precip_prvi_noaa_beta/MapServer" target="_blank">ana_past_72hr_accum_precip_prvi_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Short Range</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation/MapServer" target="_blank">srf_max_inundation</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_max_inundation_extent_noaa_beta/MapServer" target="_blank">srf_18hr_max_inundation_extent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude/MapServer" target="_blank">srf_max_high_flow_magnitude</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_max_high_flow_magnitude_beta/MapServer" target="_blank">srf_18hr_max_high_flow_magnitude</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time/MapServer" target="_blank">srf_high_water_arrival_time</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_high_water_arrival_time_beta/MapServer" target="_blank">srf_18hr_high_water_arrival_time</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_probability/MapServer" target="_blank">srf_high_water_probability</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_12hr_max_high_water_probability_beta/MapServer" target="_blank">srf_12hr_max_high_water_probability</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time/MapServer" target="_blank">srf_peak_flow_arrival_time</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_peak_flow_arrival_time_noaa_beta/MapServer" target="_blank">srf_18hr_peak_flow_arrival_time_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rapid_onset_flooding_probability/MapServer" target="_blank">srf_rapid_onset_flooding_probability</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_12hr_rapid_onset_flooding_probability_beta/MapServer" target="_blank">srf_12hr_rapid_onset_flooding_probability</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rapid_onset_flooding/MapServer" target="_blank">srf_rapid_onset_flooding</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_rapid_onset_flooding_beta/MapServer" target="_blank">srf_18hr_rapid_onset_flooding</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_rate_of_change/MapServer" target="_blank">srf_rate_of_change</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_18hr_rate_of_change_noaa_beta/MapServer" target="_blank">srf_18hr_rate_of_change_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip/MapServer" target="_blank">srf_accum_precip</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_18hr_accum_precip_noaa_beta/MapServer" target="_blank">srf_18hr_accum_precip_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Short Range - Hawaii</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation_hi/MapServer" target="_blank">srf_max_inundation_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_inundation_extent_hi_noaa_beta/MapServer" target="_blank">srf_48hr_max_inundation_extent_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time_hi/MapServer" target="_blank">srf_high_water_arrival_time_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_high_water_arrival_time_hi_beta/MapServer" target="_blank">srf_48hr_high_water_arrival_time_hi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude_hi/MapServer" target="_blank">srf_max_high_flow_magnitude_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_high_flow_magnitude_hi_beta/MapServer" target="_blank">srf_48hr_max_high_flow_magnitude_hi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time_hi/MapServer" target="_blank">srf_peak_flow_arrival_time_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_peak_flow_arrival_time_hi_noaa_beta/MapServer" target="_blank">srf_48hr_peak_flow_arrival_time_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip_hi/MapServer" target="_blank">srf_accum_precip_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_48hr_accum_precip_hi_noaa_beta/MapServer" target="_blank">srf_48hr_accum_precip_hi_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Short Range - Puerto Rico</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_inundation_prvi/FeatureServer" target="_blank">srf_max_inundation_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_inundation_extent_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_max_inundation_extent_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_high_water_arrival_time_prvi/MapServer" target="_blank">srf_high_water_arrival_time_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_high_water_arrival_time_prvi_beta/MapServer" target="_blank">srf_48hr_high_water_arrival_time_prvi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_max_high_flow_magnitude_prvi/MapServer" target="_blank">srf_max_high_flow_magnitude_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_max_high_flow_magnitude_prvi_beta/MapServer" target="_blank">srf_48hr_max_high_flow_magnitude_prvi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/srf_peak_flow_arrival_time_prvi/MapServer" target="_blank">srf_peak_flow_arrival_time_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/srf_48hr_peak_flow_arrival_time_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_peak_flow_arrival_time_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/srf_accum_precip_prvi/MapServer" target="_blank">srf_accum_precip_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/srf_48hr_accum_precip_prvi_noaa_beta/MapServer" target="_blank">srf_48hr_accum_precip_prvi_noaa</a></td>
+              </tr>
+            </table>
+            <b>NWM Medium Range</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_max_inundation/MapServer" target="_blank">mrf_max_inundation</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_max_inundation_extent_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_max_inundation_extent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_high_water_arrival_time/MapServer" target="_blank">mrf_high_water_arrival_time</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_high_water_arrival_time_beta/MapServer" target="_blank">mrf_gfs_10day_high_water_arrival_time</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_high_water_probability/MapServer" target="_blank">mrf_high_water_probability</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_5day_high_water_probability_beta/MapServer" target="_blank">mrf_gfs_5day_high_water_probability</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_max_high_flow_magnitude/MapServer" target="_blank">mrf_max_high_flow_magnitude</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_max_high_flow_magnitude_beta/MapServer" target="_blank">mrf_gfs_10day_max_high_flow_magnitude</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_peak_flow_arrival_time/MapServer" target="_blank">mrf_peak_flow_arrival_time</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_peak_flow_arrival_time_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_peak_flow_arrival_time_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_rapid_onset_flooding_probability/MapServer" target="_blank">mrf_rapid_onset_flooding_probability</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_5day_rapid_onset_flooding_probability_beta/MapServer" target="_blank">mrf_gfs_5day_rapid_onset_flooding_probability</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_rapid_onset_flooding/MapServer" target="_blank">mrf_rapid_onset_flooding</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/nwm/mrf_gfs_10day_rapid_onset_flooding_beta/MapServer" target="_blank">mrf_gfs_10day_rapid_onset_flooding</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/image/rest/services/nwm/mrf_accum_precip/MapServer" target="_blank">mrf_accum_precip</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/image/rest/services/nwm/mrf_gfs_10day_accum_precip_noaa_beta/MapServer" target="_blank">mrf_gfs_10day_accum_precip_noaa</a></td>
+              </tr>
+            </table>
+            <b>RFC Based</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_5day_max_downstream_inundation/MapServer" target="_blank">rfc_5day_max_downstream_inundation</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_based_5day_max_inundation_extent_noaa_beta/MapServer" target="_blank">rfc_based_5day_max_inundation_extent_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_5day_max_downstream_streamflow/MapServer" target="_blank">rfc_5day_max_downstream_streamflow</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_based_5day_max_streamflow_beta/MapServer" target="_blank">rfc_based_5day_max_streamflow</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_max_stage/MapServer" target="_blank">rfc_max_stage</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/rfc/rfc_max_forecast_beta/MapServer" target="_blank">rfc_max_forecast</a></td>
+              </tr>
+            </table>
+            <b>QC FIM</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/flow_based_catfim/MapServer" target="_blank">flow_based_catfim</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_flow_based_catfim_noaa_beta/MapServer" target="_blank">static_flow_based_catfim_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/stage_based_catfim/MapServer" target="_blank">stage_based_catfim</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_stage_based_catfim_noaa_beta/MapServer" target="_blank">static_stage_based_catfim_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/nwm_aep_fim/MapServer" target="_blank">nwm_aep_fim</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_nwm_aep_inundation_extent_library_noaa_beta/MapServer" target="_blank">static_nwm_aep_inundation_extent_library_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/possible_coastal_omission/MapServer" target="_blank">possible_coastal_omission</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_coastal_domain_noaa_beta/MapServer" target="_blank">static_nwm_coastal_domain_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments_hi/MapServer" target="_blank">branch_0_catchments_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_hi_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments_prvi/MapServer" target="_blank">branch_0_catchments_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_prvi_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_0_catchments/MapServer" target="_blank">branch_0_catchments</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_0_branches_noaa_beta/MapServer" target="_blank">static_hand_catchments_0_branches_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments_hi/MapServer" target="_blank">branch_gms_catchments_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_hi_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_hi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments_prvi/MapServer" target="_blank">branch_gms_catchments_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_prvi_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_prvi_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/branch_gms_catchments/MapServer" target="_blank">branch_gms_catchments</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_catchments_gms_branches_noaa_beta/MapServer" target="_blank">static_hand_catchments_gms_branches_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/src_skill/MapServer" target="_blank">src_skill_beta</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_rating_curve_performance_metrics_noaa_beta/MapServer" target="_blank">static_hand_rating_curve_performance_metrics_noaa</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/fim_libs/fim_performance/MapServer" target="_blank">fim_performance</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/fim_libs/static_hand_inundation_performance_metrics_noaa_beta/MapServer" target="_blank">static_hand_inundation_performance_metrics_noaa</a></td>
+              </tr>
+            </table>
+            <b>Reference</b>
+            <table>
+              <tr>
+                <th>Current Name (Production)</th>
+                <th>New Name (Staging)</th>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines_hi/MapServer" target="_blank">nwm_flowlines_hi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_hi_beta/MapServer" target="_blank">static_nwm_flowlines_hi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines_prvi/MapServer" target="_blank">nwm_flowlines_prvi</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_prvi_beta/MapServer" target="_blank">static_nwm_flowlines_prvi</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_flowlines/FeatureServer" target="_blank">nwm_flowlines</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_flowlines_beta/MapServer" target="_blank">static_nwm_flowlines</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://maps.water.noaa.gov/server/rest/services/reference/nwm_waterbodies/MapServer" target="_blank">nwm_waterbodies</a></td>
+                <td><a href="https://maps-staging.water.noaa.gov/server/rest/services/reference/static_nwm_waterbodies_beta/MapServer" target="_blank">static_nwm_waterbodies</a></td>
+              </tr>
+            </table>
+        </div>
+        <div class="section-body">
+          <h3 class="section-body-title">May 9, 2023 (4PM to 6PM Central Time)</h3>
+          <h4 class="section-body-subtitle">Service Updates</h4>
+          <span class="section-line-item"><b>RFC Max Stage:</b> Removed record forecasts from the forecast trend layer so that threshold values will not be hid. Moved record forecasts into a new layer.</span>
+          <span class="section-line-item"><b>AnA Soil Moisture (NOAA Internal):</b> Added missing oid fields.</span>
+          <span class="section-line-item"><b>AnA Soil Moisture Ice Content (NOAA Internal):</b> Added missing oid fields.</span>
+          <span class="section-line-item"><b>AnA Snow Depth (NOAA Internal):</b> Added missing oid fields.</span>
+        </div>
+        <div class="section-body">
+          <h3 class="section-body-title">May 4, 2023 (8:30AM to 12:30AM Central Time)</h3>
+          <h4 class="section-body-subtitle">General Updates</h4>
+          <span class="section-line-item"><b>FIM 4.3 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.0 to 4.3.</span>
+          <h4 class="section-body-subtitle">New Services</h4>
+          <span class="section-line-item"><b>Soil Moisture Analysis (NOAA Internal):</b> Depicts the soil moisture output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+          <span class="section-line-item"><b>Snow Depth Analysis (NOAA Internal):</b> Depicts the snow depth output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+          <span class="section-line-item"><b>Soil Water Equivalent Analysis (NOAA Internal):</b> Depicts the snow water equivalent output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+          <span class="section-line-item"><b>Soil Moisture Ice Content Analysis (NOAA Internal):</b> Depicts the soil moisture ice content output from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+          <span class="section-line-item"><b>Past 72 Hour Snow Water Equivalent Change Analysis (NOAA Internal):</b> Depicts snow water equivalent changes over the past 24, 48, and 72 hours derived from the operational National Water Model analysis and assimilation. Updated hourly.</span>
+          <h4 class="section-body-subtitle">Service Updates</h4>
+          <span class="section-line-item"><b>All Forecast FIM Services (NOAA Internal):</b> Updated scale at which the inundation will render to match the other services and improve render speeds.</span>
+          <span class="section-line-item"><b>Stage Based CatFIM (NOAA Internal):</b> Added 1 ft interval to layers. Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
+          <span class="section-line-item"><b>Flow Based CatFIM (NOAA Internal):</b> Separated thresholds into separate layers for easier navigation. Removed viz, NWS Name, and County Code Fields. Updated some field aliases.</span>
+          <span class="section-line-item"><b>SRF/MRF Rapid Onset Flooding Probability:</b> Fixed logic to indicate if ROF conditions will be met on any given day instead of when the first instance of ROF conditions will be met.</span>
+        </div>
         <div class="section-body">
           <h3 class="section-body-title">March 8, 2023</h3>
           <h4 class="section-body-subtitle">General Updates</h4>
