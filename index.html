@@ -24,6 +24,30 @@
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
       <div class="section-body">
+        <h3 class="section-body-title">September 7, 2023 - V2.1.2 (9AM to 12PM Central Time)</h3>
+        <h4 class="section-body-subtitle">General Updates</h4>
+        <span class="section-line-item"><b>RAS2FIM 1.18.0 Implementation:</b> We will now be implmenting a hybrid HAND and HEC-RAS Inundation solution, prioritizing HEC-RAS models where we have validated and 
+          pre-processed them. To learn more about RAS2FIM, visit the OWP <a href="https://github.com/NOAA-OWP/ras2fim/wiki">RAS2FIM</a> wiki page.</span>
+        <span class="section-line-item"><b>HAND 4.4.0.0 Implementation:</b> We will be updating the HAND version to 4.4.0.0. To learn more about HAND, visit the OWP 
+          <a href="https://github.com/NOAA-OWP/inundation-mapping/wiki">HAND</a> wiki page.</span>
+        <h4 class="section-body-subtitle">New Services</h4>
+        <span class="section-line-item"><b>Medium-Range NBM 10 Day Max Coastal Inundation (Internal):</b> Depicts the inundation extent of the peak National Water Model (NWM) total water level forecast over 
+          the next 3, 5, and 10 days. This service is derived from the medium-range NBM configuration of the NWM over the contiguous U.S. Updated every 6 hours. The new service pipeline and map files will be 
+          pushed with this deployment, but the services will not be available until NWM 3.0 goes live.</span>
+          <h4 class="section-body-subtitle">Bug Fixes</h4>
+          <span class="section-line-item"><b>Description Fixes:</b> Updated “7 ensemble members” language to “6 time-lagged ensemble members”. </span>
+          <span class="section-line-item"><b>RFC Workflow Restructuring:</b> This deployment will update our replace and route workflow to be more database focused and easier to troubleshoot going forward. Because of the new way replace and route is processed, some bug fixes associated with thresholds have been addressed and fixed. </span>
+        </div>
+      <div class="section-body">
+        <span><b>To try out these updates ahead of time, please use our test services.</b></span>
+        <div class="button" style="width: 12rem;"><a href="https://maps-staging.water.noaa.gov/portal/home/" target="_blank">HydroVIS Testing Services</a></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <h2>Previous ASI Maintenance Windows</h2>
+      </div><div class="section">
+        <div class="section-body">
         <h3 class="section-body-title">August 10, 2023 - V2.1.1 (9AM to 12PM Central Time)</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
         <span class="section-line-item"><b>NWM 3.0 Implementation:</b> The NWM 3.0 will be deployed operationally soon. Check out this <a href="https://www.weather.gov/media/notification/pdf_2023_24/pns23-06_nwm_v3.0.pdf">Public Information Statement</a> for more information on the specific NWM updates. This HydroVIS update will update infrastructure to handle the new files and add new services for the new NWM configurations once NWM 3.0 goes live.</span>
@@ -138,15 +162,6 @@
           <span class="section-line-item"><b>Short Range 48 Hour Max Inundation Extent - Puerto Rico:</b> The SRF max inundation service for Puerto Rico was incorrectly joining flowlines to the processed data which was resulting in null stream orders. These null stream orders were causing the symbology to not work correctly and hiding all inundation.</span>
           <span class="section-line-item"><b>RFC Service Status Routing Issues:</b> The workflow for replace and route and the corresponding services takes a forecast and routes the status downstream until a new RFC defined forecast point is reached. When the new point is reached, the new forecast status (whether no forecast, no flooding, or action+) is then used. In some cases, forecasts are issued at sites that are not at defined forecast points but where events are occurring. In these cases, the max status ends up being “Undetermined” instead of the actual forecast status. We have updated our algorithm to use the RFC defined forecast points AND points where live forecasts are being issued so that actual forecast statuses are used. </span>
         </div>
-      <div class="section-body">
-        <span><b>To try out these updates ahead of time, please use our test services.</b></span>
-        <div class="button" style="width: 12rem;"><a href="https://maps-staging.water.noaa.gov/portal/home/" target="_blank">HydroVIS Testing Services</a></div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="section-header">
-        <h2>Previous ASI Maintenance Windows</h2>
-      </div><div class="section">
         <div class="section-body">
             <h3 class="section-body-title">July 6, 2023 - V2.1.0 (9AM to 12PM Central Time)</h3>
             <h4 class="section-body-subtitle">General Updates</h4>
