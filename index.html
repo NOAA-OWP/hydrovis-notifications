@@ -23,20 +23,29 @@
         <span class="breaking-change"><b>*Denotes a potential breaking change</b></span>
         <span class="requires-downtime"><b>**Requires system downtime</b></span>
       </div>
-      <div class="section-body">
-        <h3 class="section-body-title">September 7, 2023 - V2.1.2 (9AM to 12PM Central Time)</h3>
+        <div class="section-body">
+        <h3 class="section-body-title">September 26, 2023 - V2.1.3</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
-        <span class="section-line-item"><b>RAS2FIM 1.18.0 Implementation:</b> We will now be implmenting a hybrid HAND and HEC-RAS Inundation solution, prioritizing HEC-RAS models where we have validated and 
-          pre-processed them. To learn more about RAS2FIM, visit the OWP <a href="https://github.com/NOAA-OWP/ras2fim/wiki">RAS2FIM</a> wiki page.</span>
-        <span class="section-line-item"><b>HAND 4.4.0.0 Implementation:</b> We will be updating the HAND version to 4.4.0.0. To learn more about HAND, visit the OWP 
-          <a href="https://github.com/NOAA-OWP/inundation-mapping/wiki">HAND</a> wiki page.</span>
-        <h4 class="section-body-subtitle">New Services</h4>
-        <span class="section-line-item"><b>Medium-Range NBM 10 Day Max Coastal Inundation (Internal):</b> Depicts the inundation extent of the peak National Water Model (NWM) total water level forecast over 
-          the next 3, 5, and 10 days. This service is derived from the medium-range NBM configuration of the NWM over the contiguous U.S. Updated every 6 hours. The new service pipeline and map files will be 
-          pushed with this deployment, but the services will not be available until NWM 3.0 goes live.</span>
-          <h4 class="section-body-subtitle">Bug Fixes</h4>
-          <span class="section-line-item"><b>Description Fixes:</b> Updated “7 ensemble members” language to “6 time-lagged ensemble members”. </span>
-          <span class="section-line-item"><b>RFC Workflow Restructuring:</b> This deployment will update our replace and route workflow to be more database focused and easier to troubleshoot going forward. Because of the new way replace and route is processed, some bug fixes associated with thresholds have been addressed and fixed. </span>
+        <span class="section-line-item">
+          <b>10% Public FIM Services:</b> The following services will have their sharing status updated to be public:
+          <ul>
+            <li><a href="https://maps.water.noaa.gov/server/rest/services/reference/static_public_fim_domain/MapServer">Public FIM Domain</a></li>
+            <li><a href="https://maps.water.noaa.gov/server/rest/services/reference/static_nwm_coastal_domain_noaa/MapServer">NWM Coastal Domain</a></li>
+            <li><a href="https://maps.water.noaa.gov/server/rest/services/nwm/ana_inundation_extent/MapServer">AnA Inundation Extent</a></li>
+            <li><a href="https://maps.water.noaa.gov/server/rest/services/nwm/mrf_gfs_5day_max_inundation_extent/MapServer">MRF GFS 5 Day Max Inundation Extent</a></li>
+            <li><a href="https://maps.water.noaa.gov/server/rest/services/rfc/rfc_based_5day_max_inundation_extent/MapServer">RFC 5 Day Max Inundation Extent</a></li>
+          </ul>
+        </span>
+        <span>Additionally, the 3 inundation extent services above received the following updates:
+          <ul>
+            <li>Each FIM service layer now has an “(EXPERIMENTAL)” suffix added to it to emphasize it is an experimental product.</li>
+            <li>Removal of FIM polygons outside of CONUS</li>
+            <li>New and improved serice descriptions</li>
+          </ul>          
+        </span>
+        <span class="section-line-item"><b>Map Service Geom Queries:</b> We have made the geometry field visible on the map services. This allows users to query map services to get feature geometry.</span>
+        <h4 class="section-body-subtitle">Updated Services</h4>
+        <span class="section-line-item"><b>Public FIM Domain:</b> The WFO individual boundaries have been dissolved to just show the overall outer boundary and added a missing area near Beaumont.</span>
         </div>
       <div class="section-body">
         <span><b>To try out these updates ahead of time, please use our test services.</b></span>
@@ -48,7 +57,22 @@
         <h2>Previous ASI Maintenance Windows</h2>
       </div><div class="section">
         <div class="section-body">
-        <h3 class="section-body-title">August 10, 2023 - V2.1.1 (9AM to 12PM Central Time)</h3>
+          <h3 class="section-body-title">September 7, 2023 - V2.1.2</h3>
+          <h4 class="section-body-subtitle">General Updates</h4>
+          <span class="section-line-item"><b>RAS2FIM 1.18.0 Implementation:</b> We will now be implmenting a hybrid HAND and HEC-RAS Inundation solution, prioritizing HEC-RAS models where we have validated and 
+            pre-processed them. To learn more about RAS2FIM, visit the OWP <a href="https://github.com/NOAA-OWP/ras2fim/wiki">RAS2FIM</a> wiki page.</span>
+          <span class="section-line-item"><b>HAND 4.4.0.0 Implementation:</b> We will be updating the HAND version to 4.4.0.0. To learn more about HAND, visit the OWP 
+            <a href="https://github.com/NOAA-OWP/inundation-mapping/wiki">HAND</a> wiki page.</span>
+          <h4 class="section-body-subtitle">New Services</h4>
+          <span class="section-line-item"><b>Medium-Range NBM 10 Day Max Coastal Inundation (Internal):</b> Depicts the inundation extent of the peak National Water Model (NWM) total water level forecast over 
+            the next 3, 5, and 10 days. This service is derived from the medium-range NBM configuration of the NWM over the contiguous U.S. Updated every 6 hours. The new service pipeline and map files will be 
+            pushed with this deployment, but the services will not be available until NWM 3.0 goes live.</span>
+            <h4 class="section-body-subtitle">Bug Fixes</h4>
+            <span class="section-line-item"><b>Description Fixes:</b> Updated “7 ensemble members” language to “6 time-lagged ensemble members”. </span>
+            <span class="section-line-item"><b>RFC Workflow Restructuring:</b> This deployment will update our replace and route workflow to be more database focused and easier to troubleshoot going forward. Because of the new way replace and route is processed, some bug fixes associated with thresholds have been addressed and fixed. </span>
+        </div>
+        <div class="section-body">
+        <h3 class="section-body-title">August 10, 2023 - V2.1.1</h3>
         <h4 class="section-body-subtitle">General Updates</h4>
         <span class="section-line-item"><b>NWM 3.0 Implementation:</b> The NWM 3.0 will be deployed operationally soon. Check out this <a href="https://www.weather.gov/media/notification/pdf_2023_24/pns23-06_nwm_v3.0.pdf">Public Information Statement</a> for more information on the specific NWM updates. This HydroVIS update will update infrastructure to handle the new files and add new services for the new NWM configurations once NWM 3.0 goes live.</span>
         <h4 class="section-body-subtitle">New Services</h4>
@@ -163,7 +187,7 @@
           <span class="section-line-item"><b>RFC Service Status Routing Issues:</b> The workflow for replace and route and the corresponding services takes a forecast and routes the status downstream until a new RFC defined forecast point is reached. When the new point is reached, the new forecast status (whether no forecast, no flooding, or action+) is then used. In some cases, forecasts are issued at sites that are not at defined forecast points but where events are occurring. In these cases, the max status ends up being “Undetermined” instead of the actual forecast status. We have updated our algorithm to use the RFC defined forecast points AND points where live forecasts are being issued so that actual forecast statuses are used. </span>
         </div>
         <div class="section-body">
-            <h3 class="section-body-title">July 6, 2023 - V2.1.0 (9AM to 12PM Central Time)</h3>
+            <h3 class="section-body-title">July 6, 2023 - V2.1.0</h3>
             <h4 class="section-body-subtitle">General Updates</h4>
             <span class="section-line-item breaking-change"><b>Naming Standardizing:</b> We have gone through all of our services and established a standardized naming convention to facilitate easier navigation and better understand of what data is being viewed from the name.
             Name changes can be found at the bottom of this notification section. Naming convention is as follows:</span>
@@ -526,7 +550,7 @@
             </table>
         </div>
         <div class="section-body">
-          <h3 class="section-body-title">May 9, 2023 (4PM to 6PM Central Time)</h3>
+          <h3 class="section-body-title">May 9, 2023</h3>
           <h4 class="section-body-subtitle">Service Updates</h4>
           <span class="section-line-item"><b>RFC Max Stage:</b> Removed record forecasts from the forecast trend layer so that threshold values will not be hid. Moved record forecasts into a new layer.</span>
           <span class="section-line-item"><b>AnA Soil Moisture (NOAA Internal):</b> Added missing oid fields.</span>
@@ -534,7 +558,7 @@
           <span class="section-line-item"><b>AnA Snow Depth (NOAA Internal):</b> Added missing oid fields.</span>
         </div>
         <div class="section-body">
-          <h3 class="section-body-title">May 4, 2023 (8:30AM to 12:30AM Central Time)</h3>
+          <h3 class="section-body-title">May 4, 2023</h3>
           <h4 class="section-body-subtitle">General Updates</h4>
           <span class="section-line-item"><b>FIM 4.3 Implementation (NOAA Internal):</b> All flood inundation mapping (FIM) and quality control (QC) FIM services will be updated from FIM version 4.0 to 4.3.</span>
           <h4 class="section-body-subtitle">New Services</h4>
